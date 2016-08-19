@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+{% include "orders/order_summary_short.html" with order=order %}
+
+<p><b>Please print for your records</b></p>
+<button  class="btn btn-success" id='print-record'>Print</button>
+{% endblock %}
+
+
+<script>
+{% block jquery %}
+$(document).ready(function() {
+	$('#print-record').on('click',function() {
+		window.print();
+});
+});
+{% endblock %}
+</script>
+
